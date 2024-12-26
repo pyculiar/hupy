@@ -1,0 +1,13 @@
+[project]
+name = "hupy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13.1"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pynvim>=0.5.2",
+    "ruff>=0.8.4",
+]
