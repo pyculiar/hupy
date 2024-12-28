@@ -36,6 +36,7 @@ class TestLeafNode(unittest.TestCase):
         node = LeafNode(tag=None, value="This is raw text")
         expected = "This is raw text"
         self.assertEqual(node.to_html(), expected)
+
     def test_tag_with_props(self):
         props = {
             "href": "https://example.com",
@@ -44,10 +45,12 @@ class TestLeafNode(unittest.TestCase):
         node = LeafNode("a", "This is a link", props)
         expected = '<a href="https://example.com" target="_blank">This is a link</a>'
         self.assertEqual(node.to_html(), expected)
+
     def test_tag_without_props(self):
         node = LeafNode("p", "This is a paragraph of text.")
         expected = "<p>This is a paragraph of text.</p>"
         self.assertEqual(node.to_html(), expected)
+
     def test_value_none(self):
         node = LeafNode(tag="p", value=None)
         with self.assertRaises(ValueError):
